@@ -1,5 +1,5 @@
 import CoreServiceSection from '@/containers/core-sevices';
-import { CTASection } from '@/containers/cta-section';
+import CtaSection from '@/containers/cta-section';
 import FaqSection from '@/containers/faq';
 import Footer from '@/containers/footer';
 import Header from '@/containers/header'
@@ -20,8 +20,7 @@ function HomePage() {
       <OurServices />
       <FaqSection />
       <Testimonials />
-
-      <CTASection />
+      <CtaSection />
       <Footer />
     </div>
   );
