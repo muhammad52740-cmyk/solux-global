@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Edu_NSW_ACT_Hand_Pre } from "next/font/google";
-
+import { Poppins, Inter, Edu_NSW_ACT_Foundation } from "next/font/google";
 
 // STYLE SHEETS SOURCE
-import "../styles/globals.css";
-
+import "@/styles/globals.css";
 
 // FONT CONFIGURATIONS
 export const poppins = Poppins({
@@ -14,6 +12,7 @@ export const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
 });
+
 export const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -22,11 +21,11 @@ export const inter = Inter({
   style: ["normal", "italic"],
 });
 
-export const eduHand = Edu_NSW_ACT_Hand_Pre({
+export const eduHand = Edu_NSW_ACT_Foundation({
   subsets: ["latin"],
   variable: "--font-edu-hand",
   display: "swap",
-  weight: ["400", "500", "700"], // available weights for this font
+  weight: ["400", "500", "700"],
   style: ["normal"],
 });
 
@@ -44,7 +43,6 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${poppins.variable} ${inter.variable} ${eduHand.variable} antialiased`}
-        cz-shortcut-listen="true"
       >
         {children}
       </body>
