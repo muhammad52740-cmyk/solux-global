@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function CtaSection() {
@@ -23,8 +24,9 @@ export default function CtaSection() {
             <Button
               size="lg"
               className="bg-[#0C509B] hover:bg-[#0A447F] text-white font-semibold px-8 rounded-full transition-all duration-300 whitespace-nowrap"
+              asChild
             >
-              Book Your Free Audit
+              <Link href="/audit">Book Your Free Audit</Link>
             </Button>
             <Button
               size="lg"

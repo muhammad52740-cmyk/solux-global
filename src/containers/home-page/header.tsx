@@ -45,11 +45,18 @@ export default function Header() {
 
         {/* === NAVIGATION === */}
         <nav aria-label="Primary" className="hidden md:flex items-center gap-8">
-          {["Solutions", "Services", "Industries", "Testimonials", "FAQ"].map(
-            (item) => (
+          {[
+            "Solutions",
+            "Services",
+            "Industries",
+            "Testimonials",
+            "FAQ",
+          ].map((item) => {
+            const href = item === "FAQ" ? "/faq" : `#${item.toLowerCase()}`;
+            return (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={href}
                 className={`text-base font-medium transition-colors duration-300 ${
                   isScrolled
                     ? "text-slate-700 hover:text-[#0C509B]"
@@ -58,8 +65,8 @@ export default function Header() {
               >
                 {item}
               </a>
-            )
-          )}
+            );
+          })}
         </nav>
 
         {/* === BUTTONS === */}
@@ -86,8 +93,9 @@ export default function Header() {
                 ? "bg-[#0C509B] text-white hover:bg-[#09407E]"
                 : "bg-[#0C509B] text-white hover:bg-[#09407E]"
             }`}
+            asChild
           >
-            Get a Demo
+            <Link href="/audit">Get a Demo</Link>
           </Button>
         </div>
 

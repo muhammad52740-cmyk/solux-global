@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Poppins, Inter, Edu_NSW_ACT_Foundation } from "next/font/google";
 
 // STYLE SHEETS SOURCE
-import "@/styles/globals.css";
+import "../styles/globals.css";
+import Header from "@/containers/home-page/header";
+import Footer from "@/containers/home-page/footer";
 
 // FONT CONFIGURATIONS (do NOT export)
 const poppins = Poppins({
@@ -46,7 +48,9 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${inter.variable} ${eduHand.variable} antialiased`}
       >
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
