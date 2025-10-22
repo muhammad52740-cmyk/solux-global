@@ -1,15 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Poppins, Inter, Edu_NSW_ACT_Hand_Pre } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+// STYLE SHEETS SOURCE
+import "../styles/globals.css";
+
+
+// FONT CONFIGURATIONS
+export const poppins = Poppins({
   subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+});
+export const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+export const eduHand = Edu_NSW_ACT_Hand_Pre({
   subsets: ["latin"],
+  variable: "--font-edu-hand",
+  display: "swap",
+  weight: ["400", "500", "700"], // available weights for this font
+  style: ["normal"],
 });
 
 export const metadata: Metadata = {
@@ -24,7 +42,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${poppins.variable} ${inter.variable} ${eduHand.variable} antialiased`}
+        cz-shortcut-listen="true"
+      >
         {children}
       </body>
     </html>
