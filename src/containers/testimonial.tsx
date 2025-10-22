@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Testimonials() {
   return (
@@ -20,7 +21,7 @@ export function Testimonials() {
                 <span className="text-foreground font-bold">Testimonials</span>
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground italic">
-                You shouldn't only{" "}
+                You shouldn&apos;t only{" "}
                 <span className="font-bold text-foreground">believe</span> our
                 words — see what our{" "}
                 <span className="font-bold text-foreground">clients</span> say.
@@ -30,11 +31,11 @@ export function Testimonials() {
             <div className="space-y-6">
               <p className="text-lg md:text-xl text-foreground leading-relaxed text-justify">
                 Solux Global is a reliable billing company with utmost
-                responsive staff and it's always been a pleasure to work with
-                them. Previously, when billing functions were performed
+                responsive staff and it&apos;s always been a pleasure to work
+                with them. Previously, when billing functions were performed
                 in-house, we were losing thousands of dollars every month due to
                 incompetent billing services and our cost of collections was far
-                too high. Since partnering with Solux Global, we've seen a
+                too high. Since partnering with Solux Global, we&apos;ve seen a
                 dramatic improvement in our revenue cycle and significantly
                 reduced our operational costs.
               </p>
@@ -71,9 +72,11 @@ export function Testimonials() {
             viewport={{ once: true }}
           >
             <div className="relative w-full max-w-xs">
-              <img
+              <Image
                 src="/professional-female-healthcare-executive-business.png"
                 alt="Healthcare professional testimonial"
+                width={400}
+                height={400}
                 className="w-full h-auto rounded-lg shadow-xl object-cover"
               />
             </div>

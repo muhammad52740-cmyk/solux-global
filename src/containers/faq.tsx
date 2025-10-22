@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   Accordion,
   AccordionItem,
@@ -44,7 +45,7 @@ export default function FaqSection() {
     {
       question: "What is your average claims processing time?",
       answer:
-        "Our streamlined processes ensure fast claims processing with an average turnaround time of 24-48 hours, helping you get paid faster and improve cash flow.",
+        "Our streamlined processes ensure fast claims processing with an average turnaround time of 24–48 hours, helping you get paid faster and improve cash flow.",
     },
   ];
 
@@ -52,7 +53,6 @@ export default function FaqSection() {
 
   return (
     <section id="faq" className="py-8 md:py-12 lg:py-16 bg-background">
-      {/* Scoped style to remove default accordion chevrons */}
       <style>{`
         .no-chevron .accordion-trigger svg { display: none !important; }
         .no-chevron .pm-icon svg { display: inline-block !important; }
@@ -78,14 +78,11 @@ export default function FaqSection() {
                   transition={{ duration: 0.3 }}
                   className="flex items-center gap-4 p-6 rounded-3xl bg-white border border-slate-200 shadow-sm cursor-pointer"
                 >
-                  {/* Icon flip on hover (affects when mouse anywhere on card) */}
                   <motion.div
                     whileHover={{ rotateY: 180 }}
                     transition={{ duration: 0.6 }}
                     className="flex items-center justify-center w-12 h-12 flex-shrink-0 text-[#01509B]"
-                    style={{
-                      transformStyle: "preserve-3d",
-                    }}
+                    style={{ transformStyle: "preserve-3d" }}
                   >
                     <Icon className="w-9 h-9" />
                   </motion.div>
@@ -116,7 +113,7 @@ export default function FaqSection() {
               </h2>
               <p className="text-slate-600 leading-relaxed">
                 To start with Solux Global, contact us to schedule a
-                consultation with one of our experts. We'll evaluate your
+                consultation with one of our experts. We&apos;ll evaluate your
                 current operations, discuss your business requirements, and
                 suggest personalized solutions to help you achieve your
                 objectives.
@@ -168,11 +165,15 @@ export default function FaqSection() {
           >
             <div className="relative w-[160%] max-w-5xl">
               <div className="absolute inset-0 bg-yellow-200/40 rounded-3xl transform -rotate-3"></div>
-              <img
+
+              <Image
                 src="/Screenshot 2025-10-22 002331.png"
                 alt="Team of healthcare professionals collaborating"
+                width={800}
+                height={800}
                 className="relative w-full h-[200%] object-contain rounded-2xl shadow-lg"
               />
+
               <div
                 className="absolute bottom-4 right-4 rounded-full p-3"
                 style={{ backgroundColor: "#01509B" }}
