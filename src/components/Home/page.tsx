@@ -1,4 +1,4 @@
-import CoreServiceSection from '@/containers/home-page/core-sevices';
+import CoreServiceSection from '@/containers/service-page/core-sevices';
 import CtaSection from '@/containers/home-page/cta-section';
 import FaqSection from '@/containers/home-page/faq';
 import Footer from '@/containers/home-page/footer';

@@ -13,6 +13,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = ["About", "Services", "Industries", "Testimonials", "FAQ"] as const;
+  
+  type NavItem = typeof navItems[number];
+
+  const getHref = (item: NavItem): string => {
+    if (item === "FAQ") return "/faq";
+    if (item === "Services") return "/service";
+    if (item === "About") return "/about-page";
+    return `#${item.toLowerCase()}`;
+  };
+
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
@@ -29,9 +40,7 @@ export default function Header() {
           className="flex items-center gap-3"
         >
           <div
-            className={`size-12 rounded-md transition-colors duration-300 ${
-              isScrolled ? "bg-[#0C509B]" : "bg-[#0C509B]"
-            }`}
+            className={`size-12 rounded-md transition-colors duration-300 bg-[#0C509B]`}
             aria-hidden
           />
           <span
@@ -45,33 +54,24 @@ export default function Header() {
 
         {/* === NAVIGATION === */}
         <nav aria-label="Primary" className="hidden md:flex items-center gap-8">
-          {[
-            "Solutions",
-            "Services",
-            "Industries",
-            "Testimonials",
-            "FAQ",
-          ].map((item) => {
-            const href = item === "FAQ" ? "/faq" : `#${item.toLowerCase()}`;
-            return (
-              <a
-                key={item}
-                href={href}
-                className={`text-base font-medium transition-colors duration-300 ${
-                  isScrolled
-                    ? "text-slate-700 hover:text-[#0C509B]"
-                    : "text-white hover:text-[#e2e8f0]"
-                }`}
-              >
-                {item}
-              </a>
-            );
-          })}
+          {navItems.map((item) => (
+            <Link
+              key={item}
+              href={getHref(item)}
+              className={`text-base font-medium transition-colors duration-300 ${
+                isScrolled
+                  ? "text-slate-700 hover:text-[#0C509B]"
+                  : "text-white hover:text-[#e2e8f0]"
+              }`}
+            >
+              {item}
+            </Link>
+          ))}
         </nav>
 
         {/* === BUTTONS === */}
         <div className="hidden md:flex items-center gap-4">
-          {/* CONTACT BUTTON  */}
+          {/* CONTACT BUTTON */}
           <button
             className={`relative overflow-hidden px-7 py-1 text-lg font-semibold rounded-md transition-all duration-300 border-2 border-[#0C509B] group ${
               isScrolled ? "text-black" : "text-white"
@@ -86,13 +86,9 @@ export default function Header() {
             />
           </button>
 
-          {/* GET DEMO BUTTON — solid blue */}
+          {/* GET DEMO BUTTON */}
           <Button
-            className={`px-7 py-3 text-lg font-semibold rounded-md transition-all duration-300 ${
-              isScrolled
-                ? "bg-[#0C509B] text-white hover:bg-[#09407E]"
-                : "bg-[#0C509B] text-white hover:bg-[#09407E]"
-            }`}
+            className="px-7 py-3 text-lg font-semibold rounded-md transition-all duration-300 bg-[#0C509B] text-white hover:bg-[#09407E]"
             asChild
           >
             <Link href="/audit">Get a Demo</Link>
@@ -103,11 +99,7 @@ export default function Header() {
         <div className="md:hidden">
           <Button
             size="sm"
-            className={`transition-colors duration-300 ${
-              isScrolled
-                ? "bg-[#0C509B] text-white hover:bg-[#09407E]"
-                : "bg-[#0C509B] text-white hover:bg-[#09407E]"
-            }`}
+            className="transition-colors duration-300 bg-[#0C509B] text-white hover:bg-[#09407E]"
           >
             Get a Demo
           </Button>

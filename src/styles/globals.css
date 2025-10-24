@@ -60,6 +60,15 @@ a {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
+/* globals.css (add this once) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
   
 }
 

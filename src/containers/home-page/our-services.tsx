@@ -1,45 +1,61 @@
 "use client";
 
+import Link from 'next/link';
+import Image from 'next/image';
+
 const services = [
   {
     title: "Medical Billing & Coding",
     description:
       "Expert coding and billing services to maximize your revenue and ensure compliance.",
     image: "/medical-billing-coding-healthcare.png",
+    link: "/all-services/medical-billing",
   },
   {
     title: "Revenue Cycle Management",
     description:
       "End-to-end management of your revenue cycle for optimal financial performance.",
     image: "/revenue-cycle-management-financial-charts.png",
+    link: "/all-services/drug-billing",
   },
   {
     title: "Claims Processing",
     description:
       "Fast and accurate claims submission and follow-up to accelerate reimbursement.",
     image: "/claims-processing-healtcare-documents.png",
+    link: "/service",
   },
   {
     title: "Compliance & Auditing",
     description:
       "Comprehensive compliance reviews and audits to protect your practice.",
     image: "/compliance-auditing-healthcare-security.png",
+    link: "/service",
   },
   {
     title: "Denial Management",
     description:
       "Strategic denial analysis and recovery to reduce revenue loss.",
     image: "/denial-management-healthcare-analytics.png",
+    link: "/all-services/ar-management",
   },
   {
     title: "Patient Billing Support",
     description: "Streamlined patient billing and payment collection services.",
     image: "/patient-billing-support-healthcare-team.png",
+    link: "/service",
   },
   {
     title: "Credentialing Services",
     description: "Complete provider credentialing and enrollment management.",
     image: "/credentialing-services-healthcare-professionals.png",
+    link: "/all-services/credentialling",
+  },
+  {
+    title: "Digital Marketing",
+    description: "Healthcare-focused digital marketing solutions to grow your practice's online presence.",
+    image: "/digital-marketing-healthcare.png",
+    link: "/all-services/digital-marketing",
   },
 ];
 
@@ -68,9 +84,11 @@ export function OurServices() {
             >
               {/* Image Container */}
               <div className="h-48 overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={service.image || "/placeholder.svg"}
                   alt={service.title}
+                  width={400}
+                  height={300}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -85,9 +103,12 @@ export function OurServices() {
                 </p>
 
                 {/* Read More Button */}
-                <button className="px-6 py-2 border-2 border-cyan-600 text-cyan-600 font-semibold rounded-lg hover:bg-cyan-50 transition-colors duration-300">
-                  Read More
-                </button>
+                <Link 
+                  href={service.link}
+                  className="inline-block px-6 py-2 border-2 border-cyan-600 text-cyan-600 font-semibold rounded-lg hover:bg-cyan-50 transition-colors duration-300"
+                >
+                  Learn More
+                </Link>
               </div>
             </div>
           ))}

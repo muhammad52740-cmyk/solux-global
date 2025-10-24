@@ -10,22 +10,24 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const services = [
-    "Medical Billing & Coding",
-    "Drug & Rehabilitation Billing",
-    "Credentialing & State Licensing",
-    "AR & Denial Management",
-    "Virtual Assistant Services",
-    "Medical Scribing",
+    { name: "Medical Billing & Coding", link: "/all-services/medical-billing" },
+    { name: "Drug & Rehabilitation Billing", link: "/all-services/drug-billing" },
+    { name: "Credentialing & State Licensing", link: "/all-services/credentialling" },
+    { name: "AR & Denial Management", link: "/all-services/ar-management" },
+    { name: "Virtual Assistant Services", link: "/all-services/virtual-assistant" },
+    { name: "Medical Scribing", link: "/all-services/medical-scribbing" },
+    { name: "Digital Marketing", link: "/all-services/digital-marketing" },
   ];
 
   const quickLinks = [
-    { label: "About", href: "#" },
+    { label: "About", href: "/about-page" },
     { label: "Contact", href: "#" },
     { label: "Blogs", href: "#" },
-    { label: "Service", href: "#" },
+    { label: "Service", href: "/service" },
     { label: "Privacy Policy", href: "#" },
   ];
 
@@ -112,14 +114,14 @@ export default function Footer() {
               <h3 className="text-white font-bold text-xl mb-6">Our Service</h3>
               <ul className="space-y-3">
                 {services.map((service) => (
-                  <li key={service}>
-                    <a
-                      href="#"
+                  <li key={service.name}>
+                    <Link
+                      href={service.link}
                       className="text-gray-300 hover:text-blue-400 transition-colors text-sm flex items-center gap-2 group"
                     >
                       <ArrowRight className="w-4 h-4 text-blue-400 group-hover:translate-x-1 transition-transform" />
-                      {service}
-                    </a>
+                      {service.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -131,13 +133,13 @@ export default function Footer() {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-gray-300 hover:text-blue-400 transition-colors text-sm flex items-center gap-2 group"
                     >
                       <ArrowRight className="w-4 h-4 text-blue-400 group-hover:translate-x-1 transition-transform" />
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
