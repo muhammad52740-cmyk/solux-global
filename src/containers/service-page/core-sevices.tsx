@@ -38,7 +38,7 @@ const tabs = [
     title: "State Licensing Assistance",
     description:
       "Expand your practice with confidence. We help healthcare providers meet state licensing requirements, keeping your operations fully compliant with regulatory standards.",
-    link: "/services/state-licensing",
+    link: "/all-services/credentialling",
   },
   {
     id: "ar-denial",

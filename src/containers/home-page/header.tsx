@@ -13,7 +13,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["About", "Services", "Industries", "Testimonials", "FAQ"] as const;
+  const navItems = ["About", "Services", "Industries", "Pricing", "FAQ"] as const;
   
   type NavItem = typeof navItems[number];
 
@@ -21,6 +21,7 @@ export default function Header() {
     if (item === "FAQ") return "/faq";
     if (item === "Services") return "/service";
     if (item === "About") return "/about-page";
+    if (item === "Pricing") return "/pricing";
     return `#${item.toLowerCase()}`;
   };
 

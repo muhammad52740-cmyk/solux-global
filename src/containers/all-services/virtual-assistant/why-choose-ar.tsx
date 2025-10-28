@@ -2,45 +2,45 @@
 
 import { motion } from "framer-motion";
 import {
-  CheckCircle,
-  Clock,
   DollarSign,
-  Focus,
+  BarChart3,
+  UserCheck,
+  Layers,
   ShieldCheck,
 } from "lucide-react";
 
-const scribingBenefits = [
-  {
-    icon: CheckCircle,
-    title: "Improved Accuracy",
-    description:
-      "Minimize documentation errors with trained scribing professionals.",
-  },
-  {
-    icon: Clock,
-    title: "Faster Patient Throughput",
-    description: "Reduce delays in charting to see more patients in less time.",
-  },
+const virtualAssistantBenefits = [
   {
     icon: DollarSign,
-    title: "Cost-Effective",
-    description: "Lower costs compared to hiring full-time in-house scribes.",
+    title: "Cost Savings",
+    description:
+      "Eliminate the high costs of in-house staff with our affordable outsourcing model.",
   },
   {
-    icon: Focus,
-    title: "Enhanced Provider Focus",
+    icon: BarChart3,
+    title: "Increased Productivity",
+    description: "Free up your team’s time to focus on patient care.",
+  },
+  {
+    icon: UserCheck,
+    title: "Trained Professionals",
     description:
-      "Physicians can spend more time with patients instead of screens.",
+      "Virtual assistants skilled in healthcare operations, HIPAA compliance, and EMR systems.",
+  },
+  {
+    icon: Layers,
+    title: "Scalable Solutions",
+    description: "Add or reduce support as your practice grows.",
   },
   {
     icon: ShieldCheck,
-    title: "HIPAA-Compliant",
+    title: "Secure & Confidential",
     description:
-      "Secure, confidential handling of all patient health information.",
+      "Patient data is always handled with strict compliance and security protocols.",
   },
 ];
 
-export default function WhyChooseScribing() {
+export default function WhyChooseVirtualAssistance() {
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="mx-auto max-w-7xl px-6">
@@ -53,8 +53,8 @@ export default function WhyChooseScribing() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#0C509B] font-poppins mb-4">
-            Benefits of Choosing{" "}
-            <span className="text-black">Solux Global for Scribing</span>
+            Why Choose{" "}
+            <span className="text-black">Solux Global Virtual Assistants?</span>
           </h2>
         </motion.div>
 
@@ -68,24 +68,26 @@ export default function WhyChooseScribing() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {scribingBenefits.map(({ icon: Icon, title, description }, idx) => (
-              <div
-                key={idx}
-                className="flex items-start gap-5 group hover:translate-x-2 transition-transform duration-300"
-              >
-                <div className="flex-shrink-0 mt-1">
-                  <Icon className="w-8 h-8 text-[#0C509B]" />
+            {virtualAssistantBenefits.map(
+              ({ icon: Icon, title, description }, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-start gap-5 group hover:translate-x-2 transition-transform duration-300"
+                >
+                  <div className="flex-shrink-0 mt-1">
+                    <Icon className="w-8 h-8 text-[#0C509B]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-1">
+                      {title}
+                    </h3>
+                    <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-1">
-                    {title}
-                  </h3>
-                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                    {description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              )
+            )}
           </motion.div>
 
           {/* Right Section - Image */}
@@ -98,8 +100,8 @@ export default function WhyChooseScribing() {
           >
             <div className="relative w-[90%] md:w-[85%]">
               <img
-                src="/medical-scribing-team.png"
-                alt="Medical scribes at work"
+                src="/virtual-assistant-team.png"
+                alt="Virtual assistants at work"
                 className="rounded-2xl shadow-2xl border-4 border-[#0C509B30] object-cover w-full h-[85%]"
               />
             </div>

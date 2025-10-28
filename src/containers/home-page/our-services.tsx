@@ -16,21 +16,21 @@ const services = [
     description:
       "End-to-end management of your revenue cycle for optimal financial performance.",
     image: "/revenue-cycle-management-financial-charts.png",
-    link: "/all-services/drug-billing",
+    link: "/all-services/medical-billing",
   },
   {
     title: "Claims Processing",
     description:
       "Fast and accurate claims submission and follow-up to accelerate reimbursement.",
     image: "/claims-processing-healtcare-documents.png",
-    link: "/service",
+    link: "/all-services/medical-billing",
   },
   {
     title: "Compliance & Auditing",
     description:
       "Comprehensive compliance reviews and audits to protect your practice.",
     image: "/compliance-auditing-healthcare-security.png",
-    link: "/service",
+    link: "/all-services/medical-billing",
   },
   {
     title: "Denial Management",
@@ -43,7 +43,7 @@ const services = [
     title: "Patient Billing Support",
     description: "Streamlined patient billing and payment collection services.",
     image: "/patient-billing-support-healthcare-team.png",
-    link: "/service",
+    link: "/all-services/medical-billing",
   },
   {
     title: "Credentialing Services",
@@ -56,6 +56,12 @@ const services = [
     description: "Healthcare-focused digital marketing solutions to grow your practice's online presence.",
     image: "/digital-marketing-healthcare.png",
     link: "/all-services/digital-marketing",
+  },
+  {
+    title: "Virtual Assistant Services",
+    description: "Professional virtual assistance for healthcare administrative tasks.",
+    image: "/virtual-assistant-healthcare.png",
+    link: "/all-services/virtual-assistant",
   },
 ];
 

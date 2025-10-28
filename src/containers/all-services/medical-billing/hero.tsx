@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 import React from "react";
 
-function VirtualAssistanceHero() {
+function MedicalBillingHero() {
   return (
     <section className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 pt-32 pb-20 overflow-hidden">
       {/* Subtle background glows */}
@@ -47,4 +47,4 @@ function VirtualAssistanceHero() {
   );
 }
 
-export default VirtualAssistanceHero;
+export default MedicalBillingHero;

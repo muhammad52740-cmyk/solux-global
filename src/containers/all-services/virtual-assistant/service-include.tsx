@@ -3,57 +3,58 @@
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
+  Mail,
   FileText,
-  Database,
-  Video,
-  ShieldCheck,
-  UserCheck,
-  Stethoscope,
+  ClipboardList,
+  Calendar,
+  BarChart3,
+  Clock,
+  PhoneCall,
 } from "lucide-react";
 
-const medicalScribingServices = [
+const virtualAssistantServices = [
   {
-    title: "Real-Time Documentation",
+    title: "Administrative Support",
     description:
-      "Detailed, accurate entry of patient encounters directly into your EHR.",
+      "Managing emails, phone calls, scheduling, and patient communication.",
+    icon: PhoneCall,
+  },
+  {
+    title: "Billing & Claims Support",
+    description:
+      "Assisting with claim submissions, follow-ups, and insurance verifications.",
+    icon: ClipboardList,
+  },
+  {
+    title: "Medical Transcription & Documentation",
+    description:
+      "Accurately recording patient encounters and updating EMR/EHR systems.",
     icon: FileText,
   },
   {
-    title: "EHR Integration",
+    title: "Patient Follow-Up & Reminders",
     description:
-      "Seamless support across major Electronic Health Record platforms.",
-    icon: Database,
+      "Appointment confirmations, payment reminders, and post-care follow-ups.",
+    icon: Calendar,
   },
   {
-    title: "Tele-Scribing (Virtual Scribing)",
+    title: "Data Entry & Reporting",
     description:
-      "Remote scribing solutions for telehealth and virtual care visits.",
-    icon: Video,
+      "Organizing records, preparing reports, and managing healthcare databases.",
+    icon: BarChart3,
   },
   {
-    title: "Compliance & Accuracy",
+    title: "24/7 Support Availability",
     description:
-      "HIPAA-compliant documentation with strict adherence to coding guidelines.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Physician Support",
-    description:
-      "Reduce workload and burnout by offloading time-consuming charting tasks.",
-    icon: UserCheck,
-  },
-  {
-    title: "Specialty-Focused Scribes",
-    description:
-      "Trained scribes with expertise across multiple medical specialties.",
-    icon: Stethoscope,
+      "Flexible assistance to fit your practice hours and patient needs.",
+    icon: Clock,
   },
 ];
 
-export default function MedicalScribingServices() {
+export default function VirtualAssistantServices() {
   return (
     <section
-      id="medical-scribing-services"
+      id="virtual-assistant-services"
       className="relative bg-white py-20 md:py-28 overflow-hidden"
     >
       {/* Subtle Background Glow */}
@@ -71,7 +72,7 @@ export default function MedicalScribingServices() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-[#0C509B] mb-6 font-poppins"
         >
-          Our <span className="text-black">Medical Scribing Services</span>{" "}
+          Our <span className="text-black">Virtual Assistant Services</span>{" "}
           Include
         </motion.h2>
 
@@ -82,14 +83,14 @@ export default function MedicalScribingServices() {
           viewport={{ once: true }}
           className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-14"
         >
-          Solux Global’s medical scribing services enhance efficiency, ensure
-          accurate clinical documentation, and help physicians focus on
-          delivering exceptional patient care.
+          Solux Global’s virtual assistant services streamline administrative
+          workflows, enhance practice efficiency, and allow healthcare
+          professionals to focus on delivering exceptional patient care.
         </motion.p>
 
         {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {medicalScribingServices.map(
+          {virtualAssistantServices.map(
             ({ title, description, icon: Icon }, i) => (
               <motion.div
                 key={title}

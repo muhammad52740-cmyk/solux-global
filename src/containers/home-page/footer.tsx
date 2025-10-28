@@ -28,7 +28,8 @@ export default function Footer() {
     { label: "Contact", href: "#" },
     { label: "Blogs", href: "#" },
     { label: "Service", href: "/service" },
-    { label: "Privacy Policy", href: "#" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms & Conditions", href: "/terms-page" },
   ];
 
   return (
