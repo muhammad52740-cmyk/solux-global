@@ -52,7 +52,7 @@ export default function Footer() {
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
                 <div className="w-20 h-20 rounded-lg flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/logo/solux_logo_transparent.png"
+                    src="/logo/solux_logo.png"
                     alt="Solux Global Logo"
                     width={80}
                     height={80}

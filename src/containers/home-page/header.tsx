@@ -44,7 +44,7 @@ export default function Header() {
           className="flex items-center"
         >
           <Image
-            src="/logo/solux_logo_transparent.png"
+            src="/logo/solux_logo.png"
             alt="Solux Global Logo"
             width={100}
             height={10}
