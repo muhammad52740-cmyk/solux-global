@@ -35,9 +35,10 @@ export default function TrustBar() {
 
   return (
     <div className="relative -mt-12 md:-mt-16 z-10">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="bg-white rounded-lg shadow-lg">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 p-6 md:p-8">
+          {/* Desktop grid - 4 columns */}
+          <div className="hidden md:grid grid-cols-4 gap-6 p-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -52,7 +53,6 @@ export default function TrustBar() {
                   <div className="absolute right-0 top-6 bottom-6 border-r border-[#0C509B30]" />
                 )}
 
-                {/* Number */}
                 <p
                   className="text-5xl md:text-6xl font-bold"
                   style={{ color: "#0C509B" }}
@@ -60,10 +60,29 @@ export default function TrustBar() {
                   {typeof stat.value === "number" ? stat.value : stat.value}
                   {stat.suffix}
                 </p>
-
-                {/* Label */}
                 <p
                   className="text-sm md:text-lg font-semibold mt-3"
+                  style={{ color: "#0C509B" }}
+                >
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile row - 1 line horizontal scroll */}
+          <div className="md:hidden flex items-center justify-between overflow-x-auto gap-3 p-4 sm:p-5">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 text-center min-w-[22%]"
+              >
+                <p className="text-2xl font-bold" style={{ color: "#0C509B" }}>
+                  {typeof stat.value === "number" ? stat.value : stat.value}
+                  {stat.suffix}
+                </p>
+                <p
+                  className="text-[10px] font-semibold mt-1 leading-snug"
                   style={{ color: "#0C509B" }}
                 >
                   {stat.label}

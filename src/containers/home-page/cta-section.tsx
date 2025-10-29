@@ -32,8 +32,9 @@ export default function CtaSection() {
               size="lg"
               variant="outline"
               className="border-2 border-[#0C509B] text-white hover:bg-[#0C509B] hover:text-white font-semibold px-8 rounded-full transition-all duration-300 whitespace-nowrap bg-transparent"
+              asChild
             >
-              Contact Us Today
+              <Link href="/contact-us">Contact Us Today</Link>
             </Button>
           </div>
         </div>
