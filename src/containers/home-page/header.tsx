@@ -20,12 +20,14 @@ export default function Header() {
   type NavItem = (typeof navItems)[number];
 
   const getHref = (item: NavItem): string => {
-    if (item === "FAQ") return "/faq";
-    if (item === "Services") return "/service";
-    if (item === "About") return "/about-page";
-    if (item === "Blog") return "/blog";
-    if (item === "Pricing") return "/pricing";
-    return `#${item.toLowerCase()}`;
+    const hrefMap: Record<NavItem, string> = {
+      FAQ: "/faq",
+      Services: "/service",
+      About: "/about-page",
+      Blog: "/blog",
+      Pricing: "/pricing",
+    };
+    return hrefMap[item];
   };
 
   return (
@@ -44,7 +46,7 @@ export default function Header() {
           className="flex items-center"
         >
           <Image
-            src="/logo/solux_logo.png"
+            src="/logo/solux_logo_transparent.png"
             alt="Solux Global Logo"
             width={100}
             height={10}
