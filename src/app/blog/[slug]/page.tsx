@@ -1,15 +1,22 @@
 "use client";
 
 import { posts } from "@/data/posts";
-import { notFound } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { slideInFromTop } from "@/utils/motion";
+import { useParams, useRouter } from "next/navigation";
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = posts.find((p) => p.slug === params.slug);
-  if (!post) return notFound();
+export default function BlogPostPage() {
+  const params = useParams<{ slug: string }>();
+  const router = useRouter();
+  const slug = typeof params?.slug === "string" ? params.slug : Array.isArray(params?.slug) ? params.slug[0] : "";
+  const post = posts.find((p) => p.slug === slug);
+  if (!post) {
+    // Fallback for client components: navigate back to blog list if not found
+    if (typeof window !== "undefined") router.replace("/blog");
+    return null;
+  }
 
   return (
     <main className="bg-white text-slate-900">
